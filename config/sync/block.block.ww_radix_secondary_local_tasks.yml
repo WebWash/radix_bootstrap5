@@ -1,0 +1,22 @@
+uuid: 6d495182-1151-40ea-8471-5680cb1b4ade
+langcode: en-gb
+status: true
+dependencies:
+  theme:
+    - ww_radix
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: ww_radix_secondary_local_tasks
+theme: ww_radix
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

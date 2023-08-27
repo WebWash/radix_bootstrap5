@@ -1,0 +1,22 @@
+uuid: 8e3998f6-6450-48ba-8ce1-feac2182605b
+langcode: en-gb
+status: true
+dependencies:
+  theme:
+    - ww_radix
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: ww_radix_primary_local_tasks
+theme: ww_radix
+region: header
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

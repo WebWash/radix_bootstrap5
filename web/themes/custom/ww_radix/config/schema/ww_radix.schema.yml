@@ -1,0 +1,5 @@
+# Schema for the configuration files of the ww_radix theme.
+
+ww_radix.settings:
+  type: theme_settings
+  label: 'ww_radix settings'

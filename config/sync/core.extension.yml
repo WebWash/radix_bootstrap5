@@ -9,6 +9,7 @@ module:
   breakpoint: 0
   ckeditor5: 0
   comment: 0
+  components: 0
   config: 0
   contact: 0
   contextual: 0
@@ -48,4 +49,6 @@ module:
 theme:
   olivero: 0
   claro: 0
+  radix: 0
+  ww_radix: 0
 profile: standard

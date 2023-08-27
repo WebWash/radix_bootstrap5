@@ -1,0 +1,22 @@
+uuid: ef65f972-9649-43e1-a243-9f1ac5f49ba0
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - ww_radix
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: ww_radix_messages
+theme: ww_radix
+region: header
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
