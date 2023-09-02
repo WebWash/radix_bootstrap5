@@ -1,0 +1,19 @@
+uuid: e2fdbd90-a030-4227-8f91-4f3e286b6672
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_caption
+    - paragraphs.paragraphs_type.carousel_items
+id: paragraph.carousel_items.field_caption
+field_name: field_caption
+entity_type: paragraph
+bundle: carousel_items
+label: Caption
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
