@@ -1,0 +1,13 @@
+{% block paragraph %}
+    {% set image_uri = paragraph.field_image.entity.field_media_image|file_uri %}
+    {% if image_uri is not null %}
+        <img src="{{ image_uri|image_style('wide') }}"
+             class="d-block w-100" alt="">
+    {% endif %}
+
+    <div class="carousel-caption d-none d-md-block">
+        <h5>{{ content.field_title }}</h5>
+        <p>{{ content.field_caption }}</p>
+    </div>
+    {{ content|without('field_title', 'field_caption', 'field_image') }}
+{% endblock paragraph %}

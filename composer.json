@@ -20,7 +20,9 @@
         "drupal/core-composer-scaffold": "^10.1",
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1",
+        "drupal/paragraphs": "^1.15",
         "drupal/radix": "^5.0",
+        "drupal/twig_tweak": "^3.2",
         "drush/drush": "^12.1"
     },
     "conflict": {
