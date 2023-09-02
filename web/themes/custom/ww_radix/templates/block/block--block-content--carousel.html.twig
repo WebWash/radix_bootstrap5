@@ -1,3 +1,20 @@
+{% set block_classes = [
+  'block',
+  bundle ? 'block--' ~ bundle|clean_class,
+  id ? 'block--' ~ id|replace({"_": "-"})|clean_class,
+]|merge(block_utility_classes ? block_utility_classes : []) %}
+
+  <div{{ attributes|without('id').addClass(block_classes) }}>
+
+  {{ title_prefix }}
+  {% if label %}
+    {% block label %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endblock %}
+  {% endif %}
+  {{ title_suffix }}
+
+{% block content %}
 <div id="carousel--{{ content['#block_content'].id() }}" class="carousel slide" data-bs-ride="false">
   <div class="carousel-indicators">
     {% for item in content['#block_content'].field_carousel_items %}
@@ -23,4 +40,7 @@
     <span class="visually-hidden">Next</span>
   </button>
   {{ content|without('field_carousel_items') }}
+</div>
+{% endblock %}
+
 </div>
