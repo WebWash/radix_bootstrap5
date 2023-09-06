@@ -1,0 +1,37 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="accordion" id="accordion--{{ paragraph.id() }}">
+          {% for item in paragraph.field_accordion_items %}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="accordion-header--{{ item.entity.id() }}">
+                <button class="accordion-button {{ loop.first ?: 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-item--{{ item.entity.id() }}" aria-expanded="true" aria-controls="accordion-item--{{ item.entity.id() }}">
+                  {{ item.entity.field_title.value }}
+                </button>
+              </h2>
+
+              <div id="accordion-item--{{ item.entity.id() }}" class="accordion-collapse collapse {{ loop.first ? 'show' }}" aria-labelledby="accordion-header--{{ item.entity.id() }}" data-bs-parent="#accordion--{{ paragraph.id() }}">
+                <div class="accordion-body">
+                  {% set description = {
+                    '#type':   'processed_text',
+                    '#text':    item.entity.field_description.value,
+                    '#format':  item.entity.field_description.format,
+                  } %}
+                  {{ description }}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+      {{ content|without('field_accordion_items') }}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}
