@@ -15,7 +15,7 @@
   {{ title_suffix }}
 
 {% block content %}
-<div id="carousel--{{ content['#block_content'].id() }}" class="carousel slide" data-bs-ride="false">
+<div id="carousel--{{ content['#block_content'].id() }}" class="carousel slide mb-5" data-bs-ride="carousel">
   <div class="carousel-indicators">
     {% for item in content['#block_content'].field_carousel_items %}
       <button type="button"
